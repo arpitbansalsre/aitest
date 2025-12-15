@@ -1,0 +1,150 @@
+Working command and prompt
+pytest -q aitesting/search_product.py -s --headed
+ 
+Generate and execute a Playwright test using pytest and Playwright MCP.
+ 
+Test Scenario:
+Open http://www.automationpractice.pl/index.php
+Search for "T-shirts"
+Verify that "Faded Short Sleeve T-shirts" is displayed in the search results
+ 
+Implementation Requirements:
+ 
+Use pytest-style structure (functions starting with test_).
+ 
+Execute each step interactively through Playwright MCP tools.
+ 
+Once all steps succeed, generate and save the final test script as mcppoc/search_product.py.
+ 
+Run the saved test automatically in headed mode (browser visible) and open the report.
+ 
+If any step or assertion fails, identify and fix the issue, then rerun until the test passes.
+ 
+Expected Output:
+ 
+A fully working Playwright + pytest test script.
+ 
+The script should automate the complete flow described above and successfully validate the product name in the results.
+
+######################################################################################################################################################
+
+Another working prompt
+Generate and execute Playwright + pytest tests for all manual test cases in:
+ 
+- File: aitesting/testcases/manualtestcases.md
+- Test data: aitesting/config/env.py
+ 
+Requirements:
+1. Each test case must become a pytest function: test_<TC_ID>
+2. Map all `Test Data` entries to env.py values (e.g., SKUs, usernames, passwords)
+3. Execute each step interactively using Playwright MCP
+4. Include assertions matching Expected Result
+5. Save scripts as aitesting/tests/<TC_ID>.py
+6. Run tests in headed mode (browser visible)
+7. If a step or assertion fails, identify, fix, and rerun until passing
+8. Generate a final report after all test cases
+
+######################################################################################################################################################
+
+Working prompt 
+ 
+Generate and execute Playwright + pytest tests for all manual test cases found in:
+ 
+File: aitesting/testcases/manualtestcases.md
+ 
+Test data: aitesting/config/env.py
+ 
+Follow these rules:
+ 
+Convert each manual test case into a pytest test function named test_<TC_ID>.
+ 
+Map all “Test Data” fields (SKUs, usernames, prices, product names, etc.) to the corresponding values in env.py.
+ 
+Execute every step of each test interactively using Playwright MCP tools, including DOM inspection and element validation before performing actions.
+ 
+Add assertions that match the “Expected Result” section of each test case.
+ 
+Automatically discover and validate stable element locators using Playwright MCP inspector before adding them to Page Object classes.
+ 
+Save each generated test script into:
+aitesting/tests/<TC_ID>.py
+ 
+Run all generated tests in headed mode so the browser is visible, with trace, console logs, and screenshots enabled for debugging.
+ 
+If a step or assertion fails, try to identify the issue, heal the locator or logic if needed, and rerun the test.
+Allow a maximum of 3 retry attempts.
+After 3 failed retries, stop fixing, save the script as it is, and continue to the next test case.
+ 
+Store all element locators inside separate Page Object Model classes in:
+aitesting/page_objects/
+Tests must use these POM classes and must not contain hardcoded selectors.
+ 
+After all test cases have been generated and executed, produce a final report summarizing:
+ 
+Passed tests
+ 
+Failed tests
+ 
+Tests that reached the retry limit
+ 
+Paths to generated scripts and artifacts (traces/screenshots)
+
+######################################################################################################################################################
+
+Draft In Progress
+Generate and execute Playwright + pytest tests for all manual test cases found in:
+ 
+-File: aitesting/testcases/manualtestcases.md
+ 
+-Test data: aitesting/config/env.py
+ 
+Follow these rules:
+ 
+Convert each manual test case into a pytest test function named test_<TC_ID>.
+ 
+Map all “Test Data” fields in the manual test case (such as SKUs, usernames, and prices) to their corresponding values in env.py.
+ 
+Execute every step of each test interactively using Playwright MCP tools.
+ 
+Add assertions that match the “Expected Result” section of each test case.
+ 
+Save each generated test script into:
+
+aitesting/tests/<TC_ID>.py
+ 
+Run all generated tests in headed mode so the browser is visible.
+ 
+If a step or assertion fails, try to identify the issue, fix it, and rerun the test.
+
+Allow a maximum of 3 retry attempts.
+
+After 3 failed retries, stop fixing, save the test script as it is, and continue to the next test case.
+ 
+Store all element locators inside separate Page Object Model classes in:
+
+aitesting/page_objects/
+
+Tests must use these POM classes and must not contain hardcoded selectors.
+ 
+After all test cases have been generated and executed, produce a final report summarizing the results of all tests.
+
+######################################################################################################################################################
+
+Generate Python Playwright tests using pytest based on the manual test cases in aitesting/manualtests/manualtestcases.md, following all rules in aitesting/rules/automation_rules.md and using all data from aitesting/config/env.py.
+Create or update the required POMs in aitesting/page_objects/, validate all selectors using MCP, and output the final test suite to aitesting/tests/test_generated.py.
+Run the test after generation and self-fix any failing selectors or steps
+
+######################################################################################################################################################
+
+Run the instructions in `aitesting/prompts/generate_python_tests.md` 
+and generate Python Playwright tests (sync mode) using Playwright MCP.
+Use:
+- `aitesting/testcases/manualtestcases.md`
+- `aitesting/rules/automation_rules.md`
+- `aitesting/config/env.py`
+Output:
+- All required POM classes in `aitesting/page_objects/`
+- One test file: `aitesting/tests/test_generated.py`
+Ensure all selectors are MCP-validated.
+
+######################################################################################################################################################
