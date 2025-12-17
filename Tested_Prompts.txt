@@ -1,0 +1,119 @@
+Tested Prompts
+ 
+Prompt1 with GPT5mini
+ 
+Generate and execute a Playwright test using pytest and Playwright MCP.
+
+Test Scenario:
+ 
+Open http://www.automationpractice.pl/index.php
+ 
+Search for "T-shirts"
+ 
+Verify that "Faded Short Sleeve T-shirts" is displayed in the search results
+
+Implementation Requirements:
+
+Use pytest-style structure (functions starting with test_).
+
+Execute each step interactively through Playwright MCP tools.
+
+Once all steps succeed, generate and save the final test script as PlaywrightPythonMcp/search_product.py.
+
+Run the saved test automatically in headed mode (browser visible) and open the report.
+
+If any step or assertion fails, identify and fix the issue, then rerun until the test passes.
+
+Expected Output:
+
+A fully working Playwright + pytest test script.
+
+The script should automate the complete flow described above and successfully validate the product name in the results.
+
+ 
+Prompt2 with GPT5
+ 
+You are a Playwright Test Generator, an expert in browser automation and end-to-end testing.
+
+Your specialty is creating robust, reliable Playwright tests that accurately simulate user interactions and validate
+
+application behavior.
+ 
+ 
+Generate Playwright python tests for all manual test cases in:
+
+- File: PlaywrightPythonMcp/manualtests/manualtestcases.md
+
+- Test data: PlaywrightPythonMcp/config/env.py
+
+Requirements for each test you generate:
+
+1. Each test case must become a pytest function: test_<TC_ID>.
+
+2. Map all `Test Data` entries to env.py values (e.g., SKUs, usernames, passwords).
+
+3. Use Playwright MCP to open the browser and interact with the site.
+
+4. Discover selectors and flows by live exploration through playwright mcp, not by static code generation.
+
+5. Save scripts as PlaywrightPythonMcp/tests/<TC_ID>.py
+
+6. Run tests in headed mode (browser visible).
+
+7. If a step or assertion fails, identify, fix, and rerun until passing.
+
+8. Generate a final report after all test cases.
+
+9. DO NOT generate test code based on the scenario alone.
+
+10. DO NOT use Pylance.
+
+11. DO NOT install Pytest or Python as they are already installed.
+ 
+Prompt3 with GPT5 with pageobjects
+ 
+You are a Playwright Test Generator, an expert in browser automation and end-to-end testing.
+
+Your specialty is creating robust, reliable Playwright tests that accurately simulate user interactions and validate
+
+application behavior.
+ 
+ 
+Generate Playwright python tests for all manual test cases in:
+
+- File: PlaywrightPythonMcp/manualtests/manualtestcases.md
+
+- Test data: PlaywrightPythonMcp/config/env.py
+
+Requirements for each test you generate:
+
+1. Each test case must become a pytest function: test_<TC_ID>.
+
+2. Map all `Test Data` entries to env.py values (e.g., SKUs, usernames, passwords).
+
+3. Use Playwright MCP to open the browser and interact with the site.
+
+4. Discover selectors and flows by live exploration through playwright mcp, not by static code generation.
+
+5. Make sure to use Playwright's best practices and page object model.
+
+6. Store all element locators inside separate Page Object Model classes in "PlaywrightPythonMcp/page_objects/"
+
+7. Tests must use these POM classes and must not contain hardcoded selectors.
+
+8. Save scripts as PlaywrightPythonMcp/tests/<TC_ID>.py
+
+9. Run tests in headed mode (browser visible).
+
+10. If a step or assertion fails, identify, fix, and rerun until passing.
+
+11. Generate a final report after all test cases are executed successfully and open the report.
+
+12. DO NOT generate test code based on the scenario alone.
+
+13. DO NOT use Pylance.
+
+14. DO NOT install Pytest or Python as they are already installed.
+My Shop
+Shop powered by PrestaShop
+ 
